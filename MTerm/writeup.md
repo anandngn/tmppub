@@ -1,7 +1,7 @@
 
 # Sensor Fusion - 3D Object Detection
 
-### In this post, we do a deep-learning approach for detecting vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. We also employ a series of performance measures to evaluate the performance of the detection approach. We use Waymo Open dataset for processing the lidars across four sections of this post to : 
+#### In this post, we do a deep-learning approach for detecting vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. We also employ a series of performance measures to evaluate the performance of the detection approach. We use Waymo Open dataset for processing the lidars across four sections of this post to : 
 
 - Section 1 : Compute Lidar Point-Cloud from Range Image
 - Section 2 : Create Birds-Eye View from Lidar PCL
