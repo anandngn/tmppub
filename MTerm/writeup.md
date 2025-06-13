@@ -1,7 +1,13 @@
 
 # Sensor Fusion - 3D Object Detection
 
-## A deep-learning approach is used to detect vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. Also, a series of performance measures is used to evaluate the performance of the detection approach. We use Waymo Open dataset for processing the lidars.
+## In this post, we do a deep-learning approach for detecting vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. We also employ a series of performance measures to evaluate the performance of the detection approach. We use Waymo Open dataset for processing the lidars across four sections of this post to : 
+- Section 1 : Compute Lidar Point-Cloud from Range Image
+- Section 2 : Create Birds-Eye View from Lidar PCL
+- Section 3 : Model-based Object Detection in BEV Image
+- Section 4 : Performance Evaluation for Object Detection
+
+---
 
 
 ## Section 1 : Compute Lidar Point-Cloud from Range Image
@@ -72,7 +78,7 @@ We use the viewer to locate and closely inspect point-clouds on vehicles and wri
 We notice from these list of 10 point-cloud images as well as in various parts of the above animation - that the significant and visible parts that appear in the LIDAR point cloud are the lamps in the vehicles whether it be - headlights, tail lamps, bumper, front light. The angles from the side view shows the car windows and mirrors when closely observed in certain point-clouds (pleaase also refer to animation for panning and zooming for such angles ).
 
 
-
+---
 
 ## Section 2 : Create Birds-Eye View from Lidar PCL
 
@@ -86,11 +92,11 @@ We perform the first step in creating a birds-eye view (BEV) perspective of the 
 ![s2_ex1_bev_from_pcl_1](./media/S2/s2_ex1_bev_from_pcl_1.png)
 
 
-### Compute intensity layer of the BEV map (ID_S2_EX2)
+### Compute intensity and hieght layer of the BEV map (ID_S2_EX2)
 
 We fill the "intensity" channel of the BEV map with data from the point-cloud. In order to do so, we identify all points with the same (x,y)-coordinates within the BEV map and then assign the intensity value of the top-most lidar point to the respective BEV pixel. Also, we normalize the resulting intensity image using percentiles, in order to make sure that the influence of outlier values (very bright and very dark regions) is sufficiently mitigated and objects of interest (e.g. vehicles) are clearly separated from the background.
 
-####  Intensity layer of the BEV map and Compute height layer of the BEV map (ID_S2_EX3)
+####  Visualizing Intensity layer and height layer of the BEV map (ID_S2_EX3)
 We then fill the "height" channel of the BEV map with data from the point-cloud. In order to do so, please make use of the sorted and pruned point-cloud lidar_pcl_top from the previous task and normalize the height in each BEV map pixel by the difference between max. and min. height which is defined in the configs structure.
 
 ![s2_ex3_bev_height_1](./media/S2/s2_ex2_bev_intensity_height_1.png)
@@ -98,7 +104,7 @@ We then fill the "height" channel of the BEV map with data from the point-cloud.
 
 
 
-
+---
 
 ## Section 3 : Model-based Object Detection in BEV Image
 
@@ -115,7 +121,7 @@ As the model input is a three-channel BEV map, the detected objects will be retu
 ![s3_ex2_detection_bnd_box_1](./media/S3/s3_ex2_detection_bnd_box_1.png)
 
 
-
+---
 
 
 ## Section 4 : Performance Evaluation for Object Detection
@@ -140,3 +146,4 @@ After processing all the frames of a sequence, the performance of the object det
 ![s4_ex3_perfect_perf_1](./media/S4/s4_ex3_perfect_perf_1.png)
 
 
+---
