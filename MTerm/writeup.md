@@ -34,7 +34,7 @@ When the code is functional, you are supposed to use the viewer to locate and cl
 
 
 #### Lidar Movie : Zoom in and rotate the open3d display window on VM to capture the vehicle images
-![s1_ex2_pointcloud_zoom_movie](./media/S1/s1_ex2_pointcloud_zoom_movie.mp4)
+![s1_ex2_pointcloud_zoom_movie](./media/S1/s1_ex2_pointcloud_zoom_movie_cmp.mp4)
 
 
 
