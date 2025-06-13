@@ -69,7 +69,7 @@ We use the viewer to locate and closely inspect point-clouds on vehicles and wri
 ![s1_ex2_lidar_pc_10](./media/S1/s1_ex2_lidar_pc_10.png)
 
 
-From the above images it can be clearly observed that the significant and visible parts that appear in the LIDAR point cloud are the lamps in the vehicles whether it be - headlights, tail lamps, bumper, front light. The angles from the side view shows the car windows and mirrors when closely observed in certain point-clouds (pleaase also refer to animation for panning and zooming for such angles ).
+We notice from these list of 10 point-cloud images as well as in various parts of the above animation - that the significant and visible parts that appear in the LIDAR point cloud are the lamps in the vehicles whether it be - headlights, tail lamps, bumper, front light. The angles from the side view shows the car windows and mirrors when closely observed in certain point-clouds (pleaase also refer to animation for panning and zooming for such angles ).
 
 
 
@@ -77,12 +77,12 @@ From the above images it can be clearly observed that the significant and visibl
 ## Section 2 : Create Birds-Eye View from Lidar PCL
 
 
-In this sections, first we create a birds-eye view (BEV) perspective of the lidar point-cloud. Based on the (x,y)-coordinates in sensor space, respective coordinates within the BEV coordinate space are computed the the actual BEV map can be filled with lidar data from the point-cloud. The corresponding height and intensity map of the same is computed as well, which are shown below
+In this section, first we create a birds-eye view (BEV) perspective of the lidar point-cloud. Based on the (x,y)-coordinates in sensor space, respective coordinates within the BEV coordinate space are computed the the actual BEV map can be filled with lidar data from the point-cloud. The corresponding height and intensity map of the same is computed as well, which are shown below
 
 ### Convert sensor coordinates to BEV-map coordinates (ID_S2_EX1)
 We perform the first step in creating a birds-eye view (BEV) perspective of the lidar point-cloud. Based on the (x,y)-coordinates in sensor space, we compute the respective coordinates within the BEV coordinate space so that  subsequently, the actual BEV map can be filled with lidar data from the point-cloud.
 
-#### Lidar Point Cloud 1
+#### Lidar Point Cloud
 ![s2_ex1_bev_from_pcl_1](./media/S2/s2_ex1_bev_from_pcl_1.png)
 
 
@@ -102,7 +102,7 @@ We then fill the "height" channel of the BEV map with data from the point-cloud.
 
 ## Section 3 : Model-based Object Detection in BEV Image
 
-### Add a second model from a GitHub repo (ID_S3_EX1)
+### Add a second model (ID_S3_EX1)
 The model-based detection of objects in lidar point-clouds using deep-learning is a heavily researched area with new approaches appearing in the literature. 
 
 We illustrate how a new model can be integrated into an existing framework. 
@@ -121,7 +121,7 @@ As the model input is a three-channel BEV map, the detected objects will be retu
 ## Section 4 : Performance Evaluation for Object Detection
 
 
-### Compute intersection-over-union between labels and detections (ID_S4_EX1)
+### Compute intersection-over-union(IOU) between labels and detections (ID_S4_EX1)
 We then find pairings between ground-truth labels and detections, so that we can determine wether an object has been (a) missed (false negative), (b) successfully detected (true positive) or (c) has been falsely reported (false positive). Based on the labels within the Waymo Open Dataset, the geometrical overlap between the bounding boxes of labels and detected objects are computed and the percentage of this overlap in relation to the area of the bounding boxes determined. A default method in the literature to arrive at this value is called intersection over union(IOU).
 
 
