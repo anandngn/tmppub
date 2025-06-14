@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Object detection in street view imagery is a crucial task in computer vision, enabling automated identification and classification of various elements such as vehicles, pedestrians, traffic signs, and road infrastructure. This process involves leveraging deep learning models to detect objects within images and assign confidence scores based on their presence.
+Object detection specifically within the context of Urban environment with varied street view imagery is a crucial task in computer vision, enabling automated identification and classification of various elements such as vehicles, pedestrians, traffic signs, and road infrastructure. This process involves leveraging deep learning models to detect objects within images and assign confidence scores based on their presence.
 
 
 ## Cloud Service
