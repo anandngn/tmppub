@@ -72,8 +72,8 @@ By applying these models to street view images, objects can be identified and as
 ### Object Identification Comparison
 | 1 | 2 | 3 |
 
-<table border = 0>
-	<tr>
+<table border="0">
+	<tr border="0">
 	<td>
 <img src="media/EfficientDet_D1.gif" alt="Sample Image" style="width:250px; height:250px;"> 
 </td>
