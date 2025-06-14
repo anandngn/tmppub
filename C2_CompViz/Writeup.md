@@ -97,13 +97,13 @@ While MobileNet far exceeded the other two models in almost all the measures we 
 <table border="0">
 	<tr border="0">
 	<td>
-<img src="media/EfficientDet_D1.png" alt="Sample Image" style="width:250px; height:250px;"> 
+<img src="media/EfficientDet_D1.png" alt="Sample Image" style="width:350px; height:250px;"> 
 </td>
 
-<td><img src="media/SSD_ResNet50_V1_FPN.png" alt="Sample Image" style="width:250px; height:250px;"> 
+<td><img src="media/SSD_ResNet50_V1_FPN.png" alt="Sample Image" style="width:350px; height:250px;"> 
 </td>
 
-<td><img src="media/SSD_MobileNet_V2_FPNLite.png" alt="Sample Image" style="width:250px; height:250px;"> 
+<td><img src="media/SSD_MobileNet_V2_FPNLite.png" alt="Sample Image" style="width:350px; height:250px;"> 
 </td>
 </tr>
 </table>
