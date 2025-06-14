@@ -52,7 +52,7 @@ Three prominent models used for street view object detection are EfficientDet, M
 
 
 
-## Results and Summary
+## Results
 
 
 ### DetectionBoxes_Precision : Precision / Accuracy Metrics
@@ -108,9 +108,58 @@ While MobileNet far exceeded the other two models in almost all the measures we 
 </tr>
 </table>
 
+The following observations are made from the training-loss and validation loss:
+For all the models - under classification loss - training loss decreases over epochs as the model learns patterns in the training data. Validation loss also decreases but may plateau or increase due to overfitting ( such as in in EfficientDet ).
+The losses decreases for both the training and validation which signals the model is larning effectively but in regularization-loss we don't notice much difference as it should be - since the regularization parameters takes care of penalizing accordingly.
+
+
+
 
 ### Comparison of Training Loss across Models
 ![Loss Comparison Models](media/Loss_Comparison_3Models.png)
+
+As expected, the model comparison syncs up with the table above where the model with the highest precision for detecting object is suppoed to have a lower loss while classifying and which is what we observe. MobileNet has the highest precision in terms of mAP values across various IOU and object-size measures while have the lowest loss during classification.
+
+## Performance Improvement : Suggested Techniques
+
+To improve the performance of your object detection models for urban development using COCO datasets, consider the following techniques:
+
+- Hyperparameter tuning: Optimize learning rate, batch size, and weight decay using grid search or Bayesian optimization. Adaptive learning rate methods like Adam or learning rate scheduling can also enhance training efficiency.
+
+- Data augmentation: Apply techniques like random cropping, rotation, flipping, and color jittering to improve model generalization. Ensuring a balanced dataset with diverse urban scenes can help the models detect objects more reliably.
+
+- Regularization: Use L2 regularization (weight decay) to prevent overfitting. Dropout layers can also be introduced, especially for deeper networks, to improve generalization.
+
+- Model architecture pruning and quantization refinement: For ResNet, consider reducing depth or using ResNet variations like ResNeXt or EfficientNet for better feature extraction. EfficientDet can benefit from BiFPN tuning to enhance feature fusion.
+
+- Anchor box optimization and proposal adjustments: Optimize anchor box sizes and aspect ratios specific to urban objects. Fine-tuning the number of proposals for EfficientDet and MobileNet can improve detection accuracy for different object scales.
+
+These refinements should enhance detection performance, especially in urban environments with complex structures and diverse object sizes. 
+
+
+
+
+
+Here are five key performance improvement techniques for object detection in urban development using MobileNet, EfficientDet, and ResNet models:
+
+- Hyperparameter tuning: Optimize learning rate, batch size, and weight decay using techniques like grid search or Bayesian optimization. MobileNet benefits from fine-tuning depth multipliers, while EfficientDet requires careful scaling of backbone and box/class networks.
+
+- Regularization: Apply dropout (especially for MobileNet) and L2 weight regularization to prevent overfitting. EfficientDet and ResNet can benefit from batch normalization, ensuring stable training and improved generalization.
+
+- Data augmentation: Enhance model robustness by applying transformations like rotation, scaling, contrast adjustments, and motion blur—common distortions in urban environments.
+
+- Model pruning and quantization: Reduce computational cost and improve inference speed by pruning unnecessary neurons and quantizing weights, especially useful for MobileNet when deployed on edge devices.
+
+- Anchor box optimization: Fine-tune anchor box sizes for EfficientDet and ResNet-based detectors to better capture diverse urban objects like cars, pedestrians, and buildings, leading to improved localization accuracy.
+
+If you're tackling deployment challenges, integrating post-processing refinements like non-max suppression optimization and adaptive thresholding can further boost precision in complex urban scenes. Hope this helps!
+
+
+---
+
+
+## Summary
+
 
 
 
