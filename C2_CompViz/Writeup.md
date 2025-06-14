@@ -44,11 +44,12 @@ Three prominent models used for street view object detection are EfficientDet, M
 
 - EfficientDet: Known for its balance between accuracy and computational efficiency, EfficientDet employs a scalable architecture to enhance detection performance while minimizing resource consumption.
 
-- MobileNet: Designed for mobile and edge computing applications, MobileNet is a lightweight model optimized for speed, making it ideal for real-time object detection in street views.
 
 - ResNet: With its deep residual network structure, ResNet excels in feature extraction, enabling precise identification of complex objects and improving classification accuracy.
 
-By applying these models to street view images, objects can be identified and assigned confidence scores, aiding in applications such as smart city planning, autonomous driving, and surveillance. Each model offers distinct advantages depending on the requirements of computational efficiency, accuracy, and deployment environment.
+
+- MobileNet: Designed for mobile and edge computing applications, MobileNet is a lightweight model optimized for speed, making it ideal for real-time object detection in street views.
+
 
 
 ## Results and Summary
@@ -85,6 +86,38 @@ By applying these models to street view images, objects can be identified and as
 </tr>
 </table>
 
+In the above chart, we have indicated the mAP Precision values obtained across various IOUs as well as various object sizes. We oberve clearly that MobileNet performs the best in terms of precision across both IOU as well object size measures. 
+
+
+While MobileNet far exceeded the other two models in almost all the measures we computed, EfficientDet did not do too badly and came in second with some of the meaasures such as 0.50 IOU and for medium-sized objects being in the range of what MobileNet had and can be attributed to it striking a balance between accuracy and computational efficiency.
+
+
+
+### Comparison of Training Loss and Validation Loss in each Model
+<table border="0">
+	<tr border="0">
+	<td>
+<img src="media/EfficientDet_D1.png" alt="Sample Image" style="width:250px; height:250px;"> 
+</td>
+
+<td><img src="media/SSD_ResNet50_V1_FPN.png" alt="Sample Image" style="width:250px; height:250px;"> 
+</td>
+
+<td><img src="media/SSD_MobileNet_V2_FPNLite.png" alt="Sample Image" style="width:250px; height:250px;"> 
+</td>
+</tr>
+</table>
+
+
+### Comparison of Training Loss across Models
+![Loss Comparison Models](media/Loss_Comparison_3Models.png)
+
+
+
+
+
+---
+
 
 
 Based on the results of the three models evaluated for object detection in an urban environment, the SSD MobileNet V2 FPNLite model performed the best with an mAP@(0.5:0.05:0.95) IOU of 0.09543, outperforming both the EfficientNet D1 and SSD ResNet50 V1 FPN models.
@@ -106,8 +139,21 @@ The plots show that the 3 models could achieve better loss if we increased the n
 
 ## Future Work & Possible Improvement
 
+By applying these models to street view images, objects can be identified and assigned confidence scores, aiding in applications such as smart city planning, autonomous driving, and surveillance. Each model offers distinct advantages depending on the requirements of computational efficiency, accuracy, and deployment environment.
+
+
+
 We identified several potential avenues for improving performance, but they would require additional resources and a higher computing budget. These include:
 - Increase the training steps: Each model was trained for only 2000 steps, which is relatively low for such kinds of data and complex architectures. So, increasing the number of training steps till the loss reaches the plateau can further improve performance.
 - Data augmentation: techniques such as flipping, scaling, and random cropping. More advanced techniques such as color jittering, rotation, and translation can also be used to improve the model's accuracy.
 - Hyperparameter tuning: Fine-tuning the hyperparameters can potentially improve the model's performance.
 - Handling occlusion and partial object detection: In this project, we focused on detecting complete objects. However, in an urban environment, objects are often partially occluded or obstructed. Developing techniques to handle partial object detection can further improve the model's performance.
+
+
+
+Write a brief summary of your experiments and suggest the best model for this problem. This should include the accuracy (mAP) values of the models you tried. Also, discuss the following:
+
+- How does the validation loss compare to the training loss?
+- Did you expect such behavior from the losses/metrics?
+- What can you do to improve the performance of the tested models further?
+
