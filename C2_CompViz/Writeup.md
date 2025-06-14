@@ -6,7 +6,7 @@ Object detection specifically within the context of urban environment with varie
 
 
 
-## Cloud Service
+## Scalable Cloud Computing
 We would be using AWS - Amazon Web Services (AWS) for this project. Here is a brief overview of AWS and some AWS Services that would be used in this project.
 
 In particular we would be employing three of their AWS services for this project : 
