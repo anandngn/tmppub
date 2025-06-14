@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Object detection specifically within the context of Urban environment with varied street view imagery is a crucial task in computer vision, enabling automated identification and classification of various elements such as vehicles, pedestrians, traffic signs, and road infrastructure. This process involves leveraging deep learning models to detect objects within images and assign confidence scores based on their presence. We train a bunch of object detection models using the TensorFlow Object Detection API on Waymo Open Dataset and determine the best based on its pros and cons.
+Object detection specifically within the context of urban environment with varied street view imagery is a crucial task in computer vision, enabling automated identification and classification of various objects such as vehicles, pedestrians, traffic signs, and road infrastructure. This process involves leveraging deep learning models to detect objects within images and assign confidence scores based on their presence. We train a bunch of object detection models using the TensorFlow Object Detection API on Waymo Open Dataset and determine the best model based on its pros and cons.
 
 
 
@@ -19,7 +19,7 @@ In particular we would be employing three of their AWS services for this project
 
 
 ## Dataset
-The Waymo Open Dataset is a large-scale dataset designed for autonomous driving research, including image object detection. It provides high-quality sensor data collected from Waymo's self-driving vehicles, featuring camera images, LiDAR point clouds, and labeled objects such as vehicles, pedestrians, and cyclists. We would be using Waymo Open Dataset that provides on-top view camera view of the drive across streets - to train and evaluate computer vision object detection model for detecting objects within an urban environment.
+The Waymo Open Dataset is a large-scale dataset designed for autonomous driving research, including image object detection. It provides high-quality sensor data collected from Waymo's self-driving vehicles, featuring camera images, LiDAR point clouds, and labeled objects such as vehicles, pedestrians, and cyclists. We would be using Waymo Open Dataset that also provides on-top view camera view of the drive across streets - to train and evaluate computer vision object detection model for detecting objects within an urban environment.
 
 
 
@@ -30,7 +30,7 @@ To create the best possible model, we play around with and tweak and test differ
 
 ## Object Detection : Model Choices
 
-Three prominent models used for street view object detection are EfficientDet, MobileNet, and ResNet:
+Three prominent models used for street view object detection are MobileNet, EfficientDet and ResNet:
 
 - EfficientDet: Known for its balance between accuracy and computational efficiency, EfficientDet employs a scalable architecture to enhance detection performance while minimizing resource consumption.
 
@@ -51,7 +51,7 @@ Three prominent models used for street view object detection are EfficientDet, M
 
 
 
-### Predicted / Actual Ground-Truth Side-By-Side Comparison
+### Predicted / Actual Ground-Truth Side-By-Side Comparison ( within each Model )
 
 
 ![Models mAP Metrics Comparison](media/3Models_SideBySidePerformance.png)
@@ -60,7 +60,7 @@ Three prominent models used for street view object detection are EfficientDet, M
 
 
 
-### Object Identification Comparison
+### Object Identification Comparison ( across Models )
 
 <table border="0">
 	<tr border="0">
@@ -79,11 +79,11 @@ Three prominent models used for street view object detection are EfficientDet, M
 In the above chart, we have indicated the mAP Precision values obtained across various IOUs as well as various object sizes. We oberve clearly that MobileNet performs the best in terms of precision across both IOU as well object size measures. 
 
 
-While MobileNet far exceeded the other two models in almost all the measures (IOU and object-sizes) we computed, EfficientDet did not do too badly and came in second with some of the meaasures such as 0.50 IOU and for medium-sized objects being in the range of what MobileNet had and can be attributed to it striking a balance between accuracy and computational efficiency.
+While MobileNet far exceeded the other two models in almost all the measures (IOU and object-sizes) we computed, EfficientDet did not do too badly and came in second with some of the meaasures such as 0.50 IOU and for medium-sized objects being in the range of what MobileNet had.
 
 
 
-### Comparison of Training Loss and Validation Loss in each Model
+### Comparison of Training Loss and Validation Loss ( in each Model )
 <table border="0">
 	<tr border="0">
 	<td>
@@ -106,7 +106,7 @@ The losses decreases for both the training and validation which signals the mode
 
 
 
-### Comparison of Training Loss across Models
+### Comparison of Training Loss ( across Models )
 ![Loss Comparison Models](media/Loss_Comparison_3Models.png)
 
 As expected, the model comparison syncs up with the table above where the model with the highest precision for detecting object is supposed to have a lower loss while classifying and which is what we observe. MobileNet has the highest precision in terms of mAP values across various IOU and object-size measures while having the lowest loss during classification.
