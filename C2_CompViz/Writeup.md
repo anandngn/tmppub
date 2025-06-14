@@ -70,7 +70,6 @@ By applying these models to street view images, objects can be identified and as
 
 
 ### Object Identification Comparison
-| 1 | 2 | 3 |
 
 <table border="0">
 	<tr border="0">
@@ -88,15 +87,6 @@ By applying these models to street view images, objects can be identified and as
 
 
 
-
-
-
-
-|           ![EfficientNet](media/EfficientDet_D1.gif)                |            ![ResNet50](media/SSD_ResNet50_V1_FPN.gif)            |         ![Mobilenet](media/SSD_MobileNet_V2_FPNLite.gif)                |
-
-
-
-
 Based on the results of the three models evaluated for object detection in an urban environment, the SSD MobileNet V2 FPNLite model performed the best with an mAP@(0.5:0.05:0.95) IOU of 0.09543, outperforming both the EfficientNet D1 and SSD ResNet50 V1 FPN models.
 
 In terms of detecting small objects like cyclists and pedestrians, the SSD MobileNet V2 FPNLite also had the highest mAP, indicating its ability to detect smaller objects better than the other models. However, the EfficientNet D1 had the highest mAP for large objects, suggesting that it may perform better in detecting larger objects like e.g nearby cars.
@@ -108,7 +98,7 @@ Overall, the model selection process showed that different models have different
 
 
 Here are the training losses of the 3 experiments:
-![](media/loss.png)
+![Loss Comparison Models](media/Loss_Comparison_3Models.png)
 
 
 
