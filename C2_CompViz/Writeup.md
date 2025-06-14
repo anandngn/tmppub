@@ -71,7 +71,7 @@ By applying these models to street view images, objects can be identified and as
 
 ### Object Identification Comparison
 
-|               **Video**                 |           ![EfficientNet](media/output_effieicntdet.gif)                |            ![ResNet50](media/output_resnet.gif)            |         ![Mobilenet](media/output_mobilenet.gif)                |
+|           ![EfficientNet](media/EfficientDet_D1.gif)                |            ![ResNet50](media/SSD_ResNet50_V1_FPN.gif)            |         ![Mobilenet](media/SSD_MobileNet_V2_FPNLite.gif)                |
 
 
 
