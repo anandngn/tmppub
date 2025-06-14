@@ -99,9 +99,9 @@ While MobileNet far exceeded the other two models in almost all the measures (IO
 </table>
 
 The following observations are made from the training-loss and validation loss:
-For all the models - under classification loss - training loss decreases over epochs as the model learns patterns in the training data. Validation loss also decreases but plateaus or increases due to overfitting ( such as in in EfficientDet ).
+For all the models - under classification loss - training loss decreases over epochs as the model learns patterns in the training data. Validation loss also decreases but plateaus or increases due to overfitting in some models ( such as in in EfficientDet ).
 
-The losses decreases for both the training and validation which signals the model is learning effectively but in regularization-loss we don't notice much difference as it should be - since the regularization parameters takes care of penalizing accordingly.
+The overall classification losses decreases for both the training and validation which signals the model is learning effectively. In regularization-loss we don't notice much difference between training-loss and validation-loss as it should be ( since the regularization parameters takes care of penalizing accordingly )
 
 
 
@@ -109,7 +109,9 @@ The losses decreases for both the training and validation which signals the mode
 ### Comparison of Training Loss ( across Models )
 ![Loss Comparison Models](media/Loss_Comparison_3Models.png)
 
-As expected, the model comparison syncs up with the table above where the model with the highest precision for detecting object is supposed to have a lower loss while classifying and which is what we observe. MobileNet has the highest precision in terms of mAP values across various IOU and object-size measures while having the lowest loss during classification.
+As expected, the model comparison syncs up with the table above where the model with the highest precision for detecting object is supposed to have a lower loss while classifying and which is what we observe. MobileNet has the highest precision in terms of mAP values across various IOU and object-size measures ( 3rd column ) while having the lowest loss during classification ( 1st-card ).
+
+![Best Model](media/BestModel.png)
 
 
 
