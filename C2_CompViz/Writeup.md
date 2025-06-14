@@ -62,7 +62,11 @@ By applying these models to street view images, objects can be identified and as
 
 ### Predicted / Actual Ground-Truth Side-By-Side Comparison
 
-| **Predicted Vs Ground Truth Sample**  |     ![EfficientNet](media/EfficientDet_SideBySide.png)     |     ![ResNet50](media/Resnet_SideBySide.png)     |     ![Mobilenet](media/Mobilenet_SideBySide.png)      |
+
+![Models mAP Metrics Comparison](media/3Models_SideBySidePerformance.png)
+
+
+
 
 
 ### Object Identification Comparison
