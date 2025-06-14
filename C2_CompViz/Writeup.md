@@ -56,7 +56,7 @@ By applying these models to street view images, objects can be identified and as
 
 ### DetectionBoxes_Precision : Precision / Accuracy Metrics
 
-![Models mAP Metrics Comparison](media/Models_mAP_Metrics_Comparison.png)
+![Models mAP Metrics Comparison](media/Models_mAP_Metrics_Comparison1.png)
 
 
 
