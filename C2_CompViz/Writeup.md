@@ -72,7 +72,7 @@ By applying these models to street view images, objects can be identified and as
 ### Object Identification Comparison
 | 1 | 2 | 3 |
 
-| <img src="media/EfficientDet_D1.gif" alt="Sample Image" style="width:33%; height:auto;"> | <img src="media/SSD_ResNet50_V1_FPN.gif" alt="Sample Image" style="width:33%; height:auto;"> | <img src="media/SSD_MobileNet_V2_FPNLite.gif" alt="Sample Image" style="width:33%; height:auto;"> |
+<img src="media/EfficientDet_D1.gif" alt="Sample Image" style="width:33%; height:auto;"> <img src="media/SSD_ResNet50_V1_FPN.gif" alt="Sample Image" style="width:33%; height:auto;"> <img src="media/SSD_MobileNet_V2_FPNLite.gif" alt="Sample Image" style="width:33%; height:auto;"> |
 
 
 
