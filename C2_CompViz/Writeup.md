@@ -20,7 +20,7 @@ In particular we would be employing three of their AWS services for this project
 
 
 ## Dataset
-The Waymo Open Dataset is a large-scale dataset designed for autonomous driving research, including image object detection. It provides high-quality sensor data collected from Waymo's self-driving vehicles, featuring camera images, LiDAR point clouds, and labeled objects such as vehicles, pedestrians, and cyclists. We use it to train and evaluate computer vision models for detecting objects in real-world driving scenarios. 
+The Waymo Open Dataset is a large-scale dataset designed for autonomous driving research, including image object detection. It provides high-quality sensor data collected from Waymo's self-driving vehicles, featuring camera images, LiDAR point clouds, and labeled objects such as vehicles, pedestrians, and cyclists. We would be using Waymo Open Dataset that provides on-top view camera view of the drive aacross streets - to train and evaluate computer vision models for detecting objects in real-world driving scenarios. 
 
 
 
@@ -29,7 +29,7 @@ The Waymo Open Dataset is a large-scale dataset designed for autonomous driving 
 
 
 
-We would be using Waymo Open Dataset that provides on-top view camera view of the drive aacross streets
+
 
 
 
@@ -56,7 +56,7 @@ By applying these models to street view images, objects can be identified and as
 
 ### DetectionBoxes_Precision : Precision / Accuracy Metrics
 
-![Models_Comparison](media/models_comparison.png)
+![Models mAP Metrics Comparison](media/Models_mAP_Metrics_Comparison.png)
 
 
 
