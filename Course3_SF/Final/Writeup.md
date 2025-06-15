@@ -15,9 +15,6 @@ Implement an EKF to track a single real-world target with lidar measurement inpu
 ![STEP-1](./media/Step_1.png)
 
 
-#### RMSE Track
-![RMSE](./media/RMSE1.png)
-
 
 
 Step 2: Track Management
