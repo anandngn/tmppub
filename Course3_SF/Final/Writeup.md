@@ -45,10 +45,12 @@ The association works properly if you see in the visualization that multiple tra
 <table>
 	<tr>
 		<td>
-![RMSE](./media/RMSE1.png)
+<img src="./media/RMSE1.png" alt="Sample Image" style="width:450px;height:250px;"> 
+
 		</td>
 	<td>
-![RMSE Track](./media/RMSE_Track_0.png)
+<img src="./media/RMSE_Track_0.png" alt="Sample Image" style="width:450px; height:250px;"> 
+
 	</td>
 </tr>
 </table>
