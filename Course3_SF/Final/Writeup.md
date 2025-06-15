@@ -50,22 +50,7 @@ For tracking, we started off with Lidar measurements to update the tracks accord
 We now use camera detections as a non-lineaar model and an add-on data to fuse it along with lidar measurements to improve the accuracy ( or proximity ) using RMSE metrics.
 The proximity or nearby objects lie within a certain threshold range using in_fov(). This way, the tracking loop now updates all tracks with lidar measurements, then with camera measurements. The console output and the visualization shows lidar updates followed by camera updates while confirming no ghost tracks or track losses would occur. The RMSE plot should show at least three confirmed tracks. Two of the tracks should be tracked from beginning to end of the sequence (0s - 200s) without track loss to ensure that the mean RMSE for these two tracks are below 0.25.
 
-
-
-
-
-
-
-
-
-Till now the only LIDAR data was used for tracking, in this task the camera detections are fused as well to compute decisions on tracks. At first in_fov() function is implemented to see if the detections lie withi9ng the camera field of view. Projecting a 3D point to 2D image space leads to a non-linear measurement function h(x), which is computed and later on respective corrections are made to measurement vector z and measurement noise covariance matrix R.
-
-Implement the nonlinear camera measurement model. You will finally complete the sensor fusion module for camera-lidar fusion.
-The tracking loop now updates all tracks with lidar measurements, then with camera measurements. The console output shows lidar updates followed by camera updates. The visualization shows that the tracking performs well, again no confirmed ghost tracks or track losses should occur. The RMSE plot should show at least three confirmed tracks. Two of the tracks should be tracked from beginning to end of the sequence (0s - 200s) without track loss. The mean RMSE for these two tracks should be below 0.25.
-
-
-Initially there were some issues in trying to get the video to play while tracking the vehicles.
-
+Initially while running the code for this step, there were some issues in trying to get the video to play on the VM while tracking the vehicles.
 
 
 #### Drive Step
