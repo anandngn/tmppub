@@ -26,6 +26,8 @@
 
 
 
+
+
 You are nearly done! To complete the final project, please answer the following questions in a write-up in pdf or markdown format:
 
 ### Write a short recap of the four tracking steps and what you implemented there (EKF, track management, data association, camera-lidar sensor fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
@@ -37,6 +39,13 @@ The focus of this section was to implement predict and measurement update functi
 Similarly in the measurement update function, functions such as post-fit residual function gamma() and pre-fit residual covariance matrix S() are implemented.
 
 Implement an EKF to track a single real-world target with lidar measurement input over time!
+
+
+![STEP-1](./media/Step_1.png)
+
+
+#### RMSE Track
+![RMSE](./media/RMSE1.png)
 
 
 
@@ -59,6 +68,13 @@ Implement a single nearest neighbor data association to associate measurements t
 The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
 
 
+![STEP-3](./media/Step_3.png)
+
+
+
+#### RMSE Track
+![RMSE Track](./media/RMSE_Track_0.png)
+
 
 
 
@@ -75,7 +91,13 @@ multi target tracking was the challenging part of this project, the complexity o
 
 
 
+#### Drive Step
+DriveStpe4.gif
 
+![Drive Steps](./media/DriveStpe4.gif)
+
+#### RMSE Track
+![Step 4](./media/Step_4.png)
 
 
 
