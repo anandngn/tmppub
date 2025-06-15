@@ -126,41 +126,46 @@ With the help of sensor fusion system becomes more reliable as multiple sensor w
 
 A sensor fusion system—where multiple sensors work together to provide more accurate data—faces several challenges in real-world applications. Here are some key obstacles:
 
-    Data synchronization – Sensors may operate at different speeds or sampling rates, making it tricky to align their outputs correctly in time-sensitive applications.
+- Data synchronization – Sensors may operate at different speeds or sampling rates, making it tricky to align their outputs correctly in time-sensitive applications.
 
-    Noise and interference – Environmental factors like weather, lighting conditions, electromagnetic interference, or occlusions can distort sensor data, affecting accuracy.
+- Noise and interference – Environmental factors like weather, lighting conditions, electromagnetic interference, or occlusions can distort sensor data, affecting accuracy.
 
-    Computational complexity – Combining data from various sources requires powerful processing capabilities, which can lead to delays or increased system costs.
+- Computational complexity – Combining data from various sources requires powerful processing capabilities, which can lead to delays or increased system costs.
 
-    Sensor reliability and degradation – Over time, sensors may experience wear, calibration issues, or even failure, impacting the fusion system's performance.
+- Sensor reliability and degradation – Over time, sensors may experience wear, calibration issues, or even failure, impacting the fusion system's performance.
 
-    Data conflicts and inconsistencies – Sensors might provide contradictory information due to limitations in their sensing capabilities, requiring smart algorithms to resolve discrepancies.
+- Data conflicts and inconsistencies – Sensors might provide contradictory information due to limitations in their sensing capabilities, requiring smart algorithms to resolve discrepancies.
 
-    Scalability – Integrating additional sensors into an existing fusion framework without degrading efficiency can be difficult.
+- Scalability – Integrating additional sensors into an existing fusion framework without degrading efficiency can be difficult.
 
-    Cost and energy consumption – High-quality sensors and advanced fusion algorithms can be expensive and require significant power, especially in mobile applications like autonomous vehicles.
+- Cost and energy consumption – High-quality sensors and advanced fusion algorithms can be expensive and require significant power, especially in mobile applications like autonomous vehicles.
 
-    Adaptability to dynamic environments – Real-world conditions are constantly changing, and a fusion system must adapt quickly to ensure accurate decision-making.
+- Adaptability to dynamic environments – Real-world conditions are constantly changing, and a fusion system must adapt quickly to ensure accurate decision-making.
 
 
-    To tackle these challenges, developers rely on advanced filtering techniques (such as Kalman filters), AI-driven data interpretation, and robust calibration strategies. If you're working on a sensor fusion project, I'd love to help brainstorm solutions!
+To tackle these challenges, developers rely on advanced filtering techniques (such as Kalman filters), AI-driven data interpretation, and robust calibration strategies. If you're working on a sensor fusion project, I'd love to help brainstorm solutions!
 
 
 
 Although the sensor fusion increases the reliabilty of the system, it adds to entropy of the system as well. More the sensors, more is the entropy.
 
-    It is unusual to expect an ambient weather and lighting conditions, these factors highly influence the measurements made by sensors which affects the results adversely.
-    Process and measurement noise variance are assumned to be constant in our case but it is not so in the real world, so this factor has to be compensated.
-    Multiple sensor working at same time generates a lot of data which are redundant in nature, this may create a bottle neck situation in the input pipeline.
-    As seen in our project there will be few flase positive detection, failing to correctly classify one might lead to unwanted braking.
+- It is unusual to expect an ambient weather and lighting conditions, these factors highly influence the measurements made by sensors which affects the results adversely.
+    
+- Process and measurement noise variance are assumned to be constant in our case but it is not so in the real world, so this factor has to be compensated.
+    
+- Multiple sensor working at same time generates a lot of data which are redundant in nature, this may create a bottle neck situation in the input pipeline.
+    
+- As seen in our project there will be few flase positive detection, failing to correctly classify one might lead to unwanted braking.
 
 
     
 ### Can you think of ways to improve your tracking results in the future?
 
-    Implement a more advanced data association, e.g. Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA)
-    Adapt the Kalman filter to also estimate the object's width, length, and height, instead of simply using the unfiltered lidar detections as we did.
-    Fine-tune the parameterization and see how low an RMSE can be achieved. One idea would be to apply the standard deviation values for lidar that found in the mid-term project.
+ - Implement a more advanced data association, e.g. Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA)
+    
+ - Adapt the Kalman filter to also estimate the object's width, length, and height, instead of simply using the unfiltered lidar detections as we did.
+    
+ - Fine-tune the parameterization and see how low an RMSE can be achieved. One idea would be to apply the standard deviation values for lidar that found in the mid-term project.
 
 
 
