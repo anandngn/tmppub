@@ -113,13 +113,13 @@ Environmental factors like weather, lighting conditions, electromagnetic interfe
 High-quality sensors and advanced fusion algorithms can be expensive and require significant power, especially in mobile applications like autonomous vehicles.
 
 
-To tackle these challenges, we relied on efficient and advanced filtering techniques (such as Kalman filters) and robust calibration strategies. 
+To tackle these challenges, we relied on efficient and advacnced filtering techniques (such as Kalman filters) and robust calibration strategies. 
 
 - Process and measurement noise variance are assumned to be constant in our case but it may not be so in the real world, so this factor has to be compensated.
     
-- Multiple sensor working at same time generates a lot of data which are redundant in nature specifically when its real-time and scaled, this may create a bottle neck situation in the input pipeline. During our experiments, we noticed some lag due to updates and deletion of objects from frames on the user-interface while tracking.
+- Multiple sensor working at same time generates a lot of data which are redundant in nature specifically when its caled, this may create a bottle neck situation in the input pipeline. During our experiments, we noticed some lag due to updates and deletion of objects fromf rames on the user-interface while tracking.
     
-- As noticed in our project there will be few false positive detection, failing to correctly classify (one might lead to unwanted braking).
+- As noticed in our project there will be few false positive detection, failing to correctly classify one might lead to unwanted braking.
 
 
 
@@ -139,7 +139,7 @@ Fine-tuning the parameters of the filter (such as process noise covariance, meas
 Expanding the Kalman filter to estimate additional object attributes (such as width, length, and height) would be valuable, particularly for vehicles or irregularly shaped objects. This can be done by augmenting the state vector and introducing new measurement models.
 
 #### Handling Nonlinear Dynamics More Effectively
-If the target objects exhibit highly nonlinear motion, switching to advanced versions like the Unscented Kalman Filter (UKF) or Particle Filter (PF) could improve state estimation accuracy compared to EKF.
+If your target objects exhibit highly nonlinear motion, switching to advanced versions like the Unscented Kalman Filter (UKF) or Particle Filter (PF) could improve state estimation accuracy compared to EKF.
 
 #### Robust Outlier and Uncertainty Handling
 Utilizing statistical outlier rejection mechanisms—such as RANSAC or robust statistical thresholds—can mitigate the effects of unreliable measurements, improving overall tracking stability.
@@ -155,6 +155,87 @@ Implementing adaptive models where thresholds or filter settings dynamically adj
 
 
 
+
+
+---
+---
+---
+
+
+
+
+Camera-LiDAR fusion offers several advantages over LiDAR-only tracking, both in theory and in practical applications:
+Theoretical Benefits
+
+- Improved Object Recognition – Cameras provide rich color and texture information, helping distinguish objects that LiDAR alone might struggle with.
+
+- Enhanced Depth Perception – LiDAR excels at measuring distances, but combining it with camera data refines depth estimation and object localization.
+
+- Better Performance in Challenging Conditions – LiDAR can struggle with reflective surfaces or adverse weather, while cameras can compensate by providing additional visual cues.
+
+- Reduced False Positives – Fusion helps filter out erroneous detections by cross-verifying data from both sensors.
+
+- More Robust Tracking – Combining the strengths of both sensors leads to more stable and accurate tracking of moving objects.
+
+Concrete Results
+
+- Higher Tracking Accuracy – Studies show that fusion improves object detection and tracking precision
+
+- 360-Degree Awareness – Using multiple cameras alongside LiDAR enhances situational awareness and allows for more reliable classification of vehicles and pedestrians
+
+- Improved Performance in Autonomous Vehicles – Self-driving systems benefit from fusion by navigating complex environments more safely.
+
+
+---
+
+
+A sensor fusion system—where multiple sensors work together to provide more accurate data—faces several challenges in real-world applications. Here are some key obstacles:
+
+- Data synchronization – Sensors may operate at different speeds or sampling rates, making it tricky to align their outputs correctly in time-sensitive applications. We noticed this in our experimentations during updates ( and removal/deletion of objects from frames )
+
+- Noise and interference – Environmental factors like weather, lighting conditions, electromagnetic interference, or occlusions can distort sensor data, affecting accuracy.
+
+- Computational complexity – Combining data from various sources requires powerful processing capabilities, which can lead to delays or increased system costs.
+
+- Sensor reliability and degradation – Over time, sensors may experience wear, calibration issues, or even failure, impacting the fusion system's performance.
+
+- Data conflicts and inconsistencies – Sensors might provide contradictory information due to limitations in their sensing capabilities, requiring smart algorithms to resolve discrepancies.
+
+- Scalability – Integrating additional sensors into an existing fusion framework without degrading efficiency can be difficult.
+
+- Cost and energy consumption – High-quality sensors and advanced fusion algorithms can be expensive and require significant power, especially in mobile applications like autonomous vehicles.
+
+- Adaptability to dynamic environments – Real-world conditions are constantly changing, and a fusion system must adapt quickly to ensure accurate decision-making.
+
+
+
+
+To tackle these challenges, developers rely on advanced filtering techniques (such as Kalman filters), AI-driven data interpretation, and robust calibration strategies. If you're working on a sensor fusion project, I'd love to help brainstorm solutions!
+
+
+
+Although the sensor fusion increases the reliabilty of the system, it adds to entropy of the system as well. More the sensors, more is the entropy.
+
+- It is unusual to expect an ambient weather and lighting conditions, these factors highly influence the measurements made by sensors which affects the results adversely.
+    
+- Process and measurement noise variance are assumned to be constant in our case but it is not so in the real world, so this factor has to be compensated.
+    
+- Multiple sensor working at same time generates a lot of data which are redundant in nature, this may create a bottle neck situation in the input pipeline.
+    
+- As seen in our project there will be few flase positive detection, failing to correctly classify one might lead to unwanted braking.
+
+----
+
+
+We relied on efficient and advacnced filtering techniques (such as Extended Kalman Filters) and  calibration strategies and metrics such as RMSE to evaluate our tracking and sensor fusion model and simplistically using the unfiltered lidar detections.
+
+
+Considering some examples such as more advanced data association, e.g. Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA), fine-tuning the parametrization to lower the RMSE metrics or adapting the Kalman filter to also estimate the object's width, length, and height, Suggest ways to improve these tracking and fusion results in the future.
+
+
+
+
+Suggest ways to improve these tracking and fusion results in the future - some examples could include more advanced data association, e.g. Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA), fine-tuning the parametrization to lower the RMSE metrics or adapting the Kalman filter to also estimate the object's width, length, and height.
 
 
 ---
