@@ -91,7 +91,7 @@ Camera-LiDAR fusion offers several advantages over LiDAR-only tracking, leveragi
 - Better Performance in Adverse Weather – In simulated and real-world conditions, camera-LiDAR fusion has proven more resilient to sensor degradation, particularly in rain or partial occlusions.
 
 
-
+---
     
 ## Which challenges will a sensor fusion system face in real-life scenarios? Did you see any of these challenges in the project?
 
@@ -125,7 +125,7 @@ To tackle these challenges, we relied on efficient and advacnced filtering techn
 
 
 
-
+---
     
 ## Can you think of ways to improve your tracking results in the future?
 
@@ -159,6 +159,8 @@ Implementing adaptive models where thresholds or filter settings dynamically adj
 
 
 
+---
+---
 ---
 
 
