@@ -1,35 +1,6 @@
 
 
 
-# Track objects over time with a Kalman Filter
-
-
-
-# Initialize, update and delete tracks
-
-
-
-# Associate measurements to tracks with nearest neighbor association
-
-
-
-# SWBAT fuse measurements from lidar and camera
-
-
-
-# Evaluate and plot results
-
-
-
-# Write up findings
-
-
-
-
-
-
-You are nearly done! To complete the final project, please answer the following questions in a write-up in pdf or markdown format:
-
 ### Write a short recap of the four tracking steps and what you implemented there (EKF, track management, data association, camera-lidar sensor fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
 
 
@@ -201,18 +172,6 @@ Fine-tune your parameterization and see how low an RMSE you can achieve! One ide
 - Adapt the Kalman filter to also estimate the object's width, length, and height, instead of simply using the unfiltered lidar detections as we did.
 
 - Use a non-linear motion model, e.g. a bicycle model, which is more appropriate for vehicle movement than our linear motion model, since a vehicle can only move forward or backward, not in any direction.
-
-
-
-
-#### Lidar Animation for Zooming/Panning the Point Clouds : Zoom in and rotate the open3d display window on VM to capture the vehicle images
-![s1_ex2_pointcloud_zoom_movie](./media/S1/s1_ex2_pointcloud_zoom_movie_sample.gif)
-
-
-
-
-#### Lidar Point Cloud 1
-![s1_ex2_lidar_pc_1](./media/S1/s1_ex2_lidar_pc_1.png)
 
 
 
