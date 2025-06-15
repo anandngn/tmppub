@@ -42,9 +42,18 @@ The association works properly if you see in the visualization that multiple tra
 ![STEP-3](./media/Step_3.png)
 
 
-
-#### RMSE Track
+<table>
+	<tr>
+		<td>
+![RMSE](./media/RMSE1.png)
+		</td>
+	<td>
 ![RMSE Track](./media/RMSE_Track_0.png)
+	</td>
+</tr>
+</table>
+
+
 
 
 
@@ -63,7 +72,6 @@ multi target tracking was the challenging part of this project, the complexity o
 
 
 #### Drive Step
-DriveStpe4.gif
 
 ![Drive Steps](./media/DriveStpe4.gif)
 
