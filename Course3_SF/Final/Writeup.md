@@ -129,10 +129,10 @@ To tackle these challenges, we relied on efficient and advacnced filtering techn
     
 ## Can you think of ways to improve your tracking results in the future?
 
-While we already implemented robust filtering techniques like the Extended Kalman Filter and calibration strategies using RMSE, which form a strong foundation, to improve tracking and fusion results in the future, we ccan consider the following approaches:
+While we already implemented robust filtering techniques like the Extended Kalman Filter and calibration strategies using RMSE, which form a strong foundation, to improve tracking and fusion results in the future, we can consider the following approaches:
 
 #### Enhanced Data Association Methods
-Moving beyond basic nearest-neighbor approaches, you might integrate Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA) to better handle clutter and occlusions. These methods refine association strategies by considering multiple hypotheses and maintaining probabilistic consistency in object tracking.
+Moving beyond basic nearest-neighbor approaches, we might integrate Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA) to better handle clutter and occlusions. These methods refine association strategies by considering multiple hypotheses and maintaining probabilistic consistency in object tracking.
 
 #### Refined Kalman Filter Parametrization
 Fine-tuning the parameters of the filter (such as process noise covariance, measurement noise covariance, and state transition matrix) using optimization techniques can significantly lower RMSE. Approaches like Expectation-Maximization (EM) or reinforcement learning-based tuning might enhance filter adaptability.
