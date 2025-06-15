@@ -16,7 +16,6 @@ The core functionalities of the Kalman Filter Algorithm (EKF) - involves impleme
 Implement the track management wherein we maintain the track or decide to delete it based on some conditions and constraints. The track management initializes and deletes tracks, set a track state and a track score.
 The visualization we created exmplify that a new track is initialized automatically where unassigned measurements occur, the true track is confirmed quickly, and the track is deleted after it has disappeared from the visible range. 
 
-
 Initially if the track are unassigned the score for the track is reduced and checked for position uncertainty, if the uncertainity is higher the track is deleted. Later for the assigned track the score is increased and if the score increases above the pre-defined threshold the track is set as confirmed.
 
 
@@ -45,42 +44,11 @@ In the implementation, each measurement is used at most once and each track is u
 </table>
 
 
----
 
-
-
-
-Implement a single nearest neighbor data association to associate measurements to tracks. You will finally move on to multi target tracking now!
-The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
-
-
-
-
-
-
-
-Tasks implemented till now are capable of managing a single track but to accommodate multi-target tracking, data association needs to be implemented. In the data association task, at first Mahalanobis distance(MHD) is calculated, and later gating function is implemented which uses MHD to remove the false positives being associated with the actual tracks. once we have eliminated the false positives association matrix is built which consists of tracks and measurements with respective MHD values. finally, the tracks are associated with the closest ones.
-
-
-
-Implement a single nearest neighbor data association to associate measurements to tracks. You will finally move on to multi target tracking now!
-The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
-
-
-
-
-
-
-Here the main task is to update and monitor the parameters that decide wheater track is to be affirmed or deleted. At first the x and P paramters are initialized with resultant x and P obtained from previous EKF function.
-
-
-
-
-
-
-The focus of this section was to implement predict and measurement update functions which form the building blocks of the extended Kalman filter. Predict function requires a motion model function F() and a process estimation function Q(). F() is modeled with an assumption of constant velocity process in 3D and corresponding process noise covariance matrix Q() depending on the current timestep dt.
-
-Similarly in the measurement update function, functions such as post-fit residual function gamma() and pre-fit residual covariance matrix S() are implemented.
+### Step 4: Fusion of Lidar measurements and Camera detections
+For tracking, we started off with Lidar measurements to update the tracks accordingly and achieved accuracy with mean-RMSE across tracks being below 0.35. 
+We now use camera detections as a non-lineaar model and an add-on data to fuse it along with lidar measurements to improve the accuracy ( or proximity ) using RMSE metrics.
+The proximity or nearby objects lie within a certain threshold range using in_fov(). This way, the tracking loop now updates all tracks with lidar measurements, then with camera measurements. The console output and the visualization shows lidar updates followed by camera updates while confirming no ghost tracks or track losses would occur. The RMSE plot should show at least three confirmed tracks. Two of the tracks should be tracked from beginning to end of the sequence (0s - 200s) without track loss to ensure that the mean RMSE for these two tracks are below 0.25.
 
 
 
@@ -88,59 +56,15 @@ Similarly in the measurement update function, functions such as post-fit residua
 
 
 
-Step 2: Track Management
-
-Here the main task is to update and monitor the parameters that decide wheater track is to be affirmed or deleted. At first the x and P paramters are initialized with resultant x and P obtained from previous EKF function.
-
-Initially if the track are unassigned the score for the track is reduced and checked for position uncertainty, if the uncertainity is higher the track is deleted. Later for the assigned track the score is increased and if the score increases above the pre-defined threshold (0.6) the track is set as confirmed.
 
 
-Implement the track management to initialize and delete tracks, set a track state and a track score.
-The visualization shows that a new track is initialized automatically where unassigned measurements occur, the true track is confirmed quickly, and the track is deleted after it has vanished from the visible range. 
-After the object has disappeared from the visible range, it might take some time until the track is deleted. This is okay because in theory the object is still there, so the track management tries to predict the track further on. Just make sure that the track is deleted eventually.
-
-
-
-Step 3: Association of tracks and sensor measurements
-Tasks implemented till now are capable of managing a single track but to accommodate multi-target tracking, data association needs to be implemented. In the data association task, at first Mahalanobis distance(MHD) is calculated, and later gating function is implemented which uses MHD to remove the false positives being associated with the actual tracks. once we have eliminated the false positives association matrix is built which consists of tracks and measurements with respective MHD values. finally, the tracks are associated with the closest ones.
-
-
-Implement a single nearest neighbor data association to associate measurements to tracks. You will finally move on to multi target tracking now!
-The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
-
-
-![STEP-3](./media/Step_3_1.png)
-
-
-<table>
-	<tr>
-		<td>
-			<img src="./media/RMSE1.png" alt="Sample Image" style="width:450px;height:250px;"> 
-
-</td>
-
-<td>
-<img src="./media/RMSE_Track_0.png" alt="Sample Image" style="width:450px; height:250px;"> 
-
-</td>
-</tr>
-</table>
-
-
-
-
-
-
-Step 4: Fuse measurements from camera along with Lidar
 Till now the only LIDAR data was used for tracking, in this task the camera detections are fused as well to compute decisions on tracks. At first in_fov() function is implemented to see if the detections lie withi9ng the camera field of view. Projecting a 3D point to 2D image space leads to a non-linear measurement function h(x), which is computed and later on respective corrections are made to measurement vector z and measurement noise covariance matrix R.
 
-Implement the nonlinear camera measurement model. You will finally complete the sensor fusion module for camera-lidar fusion!
+Implement the nonlinear camera measurement model. You will finally complete the sensor fusion module for camera-lidar fusion.
 The tracking loop now updates all tracks with lidar measurements, then with camera measurements. The console output shows lidar updates followed by camera updates. The visualization shows that the tracking performs well, again no confirmed ghost tracks or track losses should occur. The RMSE plot should show at least three confirmed tracks. Two of the tracks should be tracked from beginning to end of the sequence (0s - 200s) without track loss. The mean RMSE for these two tracks should be below 0.25.
 
-Initially there were some issues in trying to get the video to play while tracking.
 
-
-multi target tracking was the challenging part of this project, the complexity of the system started increasing as we had to go through multiple thresholding to associate and disassociate tracks. Below shown is the resulting tracking video which includes all 4 steps mentioned above.
+Initially there were some issues in trying to get the video to play while tracking the vehicles.
 
 
 
@@ -153,6 +77,7 @@ multi target tracking was the challenging part of this project, the complexity o
 
 
 ---
+
 
  
 ### Do you see any benefits in camera-lidar fusion compared to lidar-only tracking (in theory and in your concrete results)?
