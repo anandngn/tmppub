@@ -25,7 +25,27 @@ While we introduced and discussed briefly about track management, they are prima
 In the implementation, each measurement is used at most once and each track is updated at most once. The visualization shows that there are no confirmed “ghost tracks” that do not exist in reality even though they maybe intially be a prospetc but gets purged after severaal fraames over time.
 
 
- 
+
+
+![STEP-3](./media/Step_3_1.png)
+
+
+<table>
+	<tr>
+		<td>
+			<img src="./media/RMSE1.png" alt="Sample Image" style="width:450px;height:250px;"> 
+
+</td>
+
+<td>
+<img src="./media/RMSE_Track_0.png" alt="Sample Image" style="width:450px; height:250px;"> 
+
+</td>
+</tr>
+</table>
+
+
+---
 
 
 
