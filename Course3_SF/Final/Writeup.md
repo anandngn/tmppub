@@ -97,21 +97,21 @@ Camera-LiDAR fusion offers several advantages over LiDAR-only tracking, leveragi
 
 A sensor fusion system—where multiple sensors work together to provide more accurate data—faces several challenges in real-world applications. Here are some key obstacles:
 
-### Data synchronization:
+#### Data synchronization:
 Sensors may operate at different speeds or sampling rates, making it tricky to align their outputs correctly in time-sensitive applications. We noticed this in our experimentations during updates ( and removal/deletion of objects from frames )
 
-### Scalability and adaptability to dynamic environments
+#### Scalability and adaptability to dynamic environments
 Real-world conditions are constantly changing, and a fusion system must adapt quickly to ensure accurate decision-making. Integrating additional sensors into an existing fusion framework without degrading efficiency can be difficult. 
 
 
-### Computational complexity and Data conflicts
+#### Computational complexity and Data conflicts
 Combining data from various sources requires powerful processing capabilities, which can lead to delays or increased system costs. Sensors might provide contradictory information due to limitations in their sensing capabilities, requiring smart algorithms to resolve discrepancies.
 
 
-### Sensor reliability and degradation  due to noise and interference
+#### Sensor reliability and degradation  due to noise and interference
 Environmental factors like weather, lighting conditions, electromagnetic interference, or occlusions can distort sensor data, affecting accuracy. Over time, sensors may also experience wear, calibration issues, or even failure, impacting the fusion system's performance.
 
-### Cost and energy consumption
+#### Cost and energy consumption
 High-quality sensors and advanced fusion algorithms can be expensive and require significant power, especially in mobile applications like autonomous vehicles.
 
 
@@ -131,22 +131,22 @@ To tackle these challenges, we relied on efficient and advacnced filtering techn
 
 While we already implemented robust filtering techniques like the Extended Kalman Filter and calibration strategies using RMSE, which form a strong foundation, to improve tracking and fusion results in the future, we ccan consider the following approaches:
 
-### Enhanced Data Association Methods
+#### Enhanced Data Association Methods
 Moving beyond basic nearest-neighbor approaches, you might integrate Global Nearest Neighbor (GNN) or Joint Probabilistic Data Association (JPDA) to better handle clutter and occlusions. These methods refine association strategies by considering multiple hypotheses and maintaining probabilistic consistency in object tracking.
 
-### Refined Kalman Filter Parametrization
+#### Refined Kalman Filter Parametrization
 Fine-tuning the parameters of the filter (such as process noise covariance, measurement noise covariance, and state transition matrix) using optimization techniques can significantly lower RMSE. Approaches like Expectation-Maximization (EM) or reinforcement learning-based tuning might enhance filter adaptability.
 
-### Extended State Estimation
+#### Extended State Estimation
 Expanding the Kalman filter to estimate additional object attributes (such as width, length, and height) would be valuable, particularly for vehicles or irregularly shaped objects. This can be done by augmenting the state vector and introducing new measurement models.
 
-### Handling Nonlinear Dynamics More Effectively
+#### Handling Nonlinear Dynamics More Effectively
 If your target objects exhibit highly nonlinear motion, switching to advanced versions like the Unscented Kalman Filter (UKF) or Particle Filter (PF) could improve state estimation accuracy compared to EKF.
 
-### Robust Outlier and Uncertainty Handling
+#### Robust Outlier and Uncertainty Handling
 Utilizing statistical outlier rejection mechanisms—such as RANSAC or robust statistical thresholds—can mitigate the effects of unreliable measurements, improving overall tracking stability.
 
-### Real-Time Adaptation Mechanisms
+#### Real-Time Adaptation Mechanisms
 Implementing adaptive models where thresholds or filter settings dynamically adjust based on environmental context (e.g., dense urban scenes vs. open highways) can significantly boost performance.
 
 
