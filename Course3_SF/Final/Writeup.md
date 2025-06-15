@@ -39,7 +39,7 @@ Implement a single nearest neighbor data association to associate measurements t
 The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
 
 
-![STEP-3](./media/Step_3.png)
+![STEP-3](./media/Step_3_1.png)
 
 
 <table>
