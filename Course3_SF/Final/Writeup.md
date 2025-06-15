@@ -86,25 +86,25 @@ multi target tracking was the challenging part of this project, the complexity o
 Camera-LiDAR fusion offers several advantages over LiDAR-only tracking, both in theory and in practical applications:
 Theoretical Benefits
 
-    Improved Object Recognition – Cameras provide rich color and texture information, helping distinguish objects that LiDAR alone might struggle with.
+- Improved Object Recognition – Cameras provide rich color and texture information, helping distinguish objects that LiDAR alone might struggle with.
 
-    Enhanced Depth Perception – LiDAR excels at measuring distances, but combining it with camera data refines depth estimation and object localization.
+- Enhanced Depth Perception – LiDAR excels at measuring distances, but combining it with camera data refines depth estimation and object localization.
 
-    Better Performance in Challenging Conditions – LiDAR can struggle with reflective surfaces or adverse weather, while cameras can compensate by providing additional visual cues.
+- Better Performance in Challenging Conditions – LiDAR can struggle with reflective surfaces or adverse weather, while cameras can compensate by providing additional visual cues.
 
-    Reduced False Positives – Fusion helps filter out erroneous detections by cross-verifying data from both sensors.
+- Reduced False Positives – Fusion helps filter out erroneous detections by cross-verifying data from both sensors.
 
-    More Robust Tracking – Combining the strengths of both sensors leads to more stable and accurate tracking of moving objects.
+- More Robust Tracking – Combining the strengths of both sensors leads to more stable and accurate tracking of moving objects.
 
 Concrete Results
 
-    Higher Tracking Accuracy – Studies show that fusion improves object detection and tracking precision
+- Higher Tracking Accuracy – Studies show that fusion improves object detection and tracking precision
 
-	360-Degree Awareness – Using multiple cameras alongside LiDAR enhances situational awareness
+- 360-Degree Awareness – Using multiple cameras alongside LiDAR enhances situational awareness
 
-	Better Object Classification – Fusion allows for more reliable classification of vehicles and pedestrians
+- Better Object Classification – Fusion allows for more reliable classification of vehicles and pedestrians
 
-	Improved Performance in Autonomous Vehicles – Self-driving systems benefit from fusion by navigating complex environments more safely
+- Improved Performance in Autonomous Vehicles – Self-driving systems benefit from fusion by navigating complex environments more safely
 
 
 
