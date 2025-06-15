@@ -1,58 +1,11 @@
 
 
 
-## Write a short recap of the four tracking steps and what you implemented there (EKF, track management, data association, camera-lidar sensor fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
+### Write a short recap of the four tracking steps and what you implemented there (EKF, track management, data association, camera-lidar sensor fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
 
 
-### Step 1: Implemented Extended Kalman Filter Algorithm (EKF) to track a single real-world target with lidar measurement over time and for estimating other vehicles in 3D space.
+Step 1: Implemented Extended Kalman Filter Algorithm (EKF) to track a single real-world target with lidar measurement over time and for estimating other vehicles in 3D space.
 The core functionalities of the Kalman Filter Algorithm (EKF) - involves implementing the predict and measurement updates where the predict function requires a motion model and the measurement involves creating the post-fit residual funtion gamma() and a pre-fit residual covariance matrix S().
-
-![STEP-1](./media/Step_1.png)
-
-
-
-### Step 2: Track Management
-
-Implement the track management wherein we maintain the track or decide to delete it based on some conditions and constraints. The track management initializes and deletes tracks, set a track state and a track score.
-The visualization we created exmplify that a new track is initialized automatically where unassigned measurements occur, the true track is confirmed quickly, and the track is deleted after it has disappeared from the visible range. 
-
-
-Initially if the track are unassigned the score for the track is reduced and checked for position uncertainty, if the uncertainity is higher the track is deleted. Later for the assigned track the score is increased and if the score increases above the pre-defined threshold the track is set as confirmed.
-
-
-### Step 3: Association of tracks and sensor measurements
-While we introduced and discussed briefly about track management, they are primarily for managing single tracks and was implemented as a single nearest neighbor data association to associate measurements to tracks. For managing multi-target tracking, data association and sensor measurements needs to be implemented and incorporated. We use a distance metric (such as Mahalanobis distance) and a gating function to eliminate the false positives before combing tracks together based on their proximity with each other on the adjacency matrix graph created from each track.
-In the implementation, each measurement is used at most once and each track is updated at most once. The visualization shows that there are no confirmed “ghost tracks” that do not exist in reality even though they maybe intially be a prospetc but gets purged after severaal fraames over time.
-
-
- 
-
-
-
-
-Implement a single nearest neighbor data association to associate measurements to tracks. You will finally move on to multi target tracking now!
-The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
-
-
-
-
-
-
-
-Tasks implemented till now are capable of managing a single track but to accommodate multi-target tracking, data association needs to be implemented. In the data association task, at first Mahalanobis distance(MHD) is calculated, and later gating function is implemented which uses MHD to remove the false positives being associated with the actual tracks. once we have eliminated the false positives association matrix is built which consists of tracks and measurements with respective MHD values. finally, the tracks are associated with the closest ones.
-
-
-
-Implement a single nearest neighbor data association to associate measurements to tracks. You will finally move on to multi target tracking now!
-The association works properly if you see in the visualization that multiple tracks are updated with multiple measurements. The console output shows that each measurement is used at most once and each track is updated at most once. The visualization should show that there are no confirmed “ghost tracks” that do not exist in reality. There may be initialized or tentative “ghost tracks” as long as they are deleted after several frames. 
-
-
-
-
-
-
-Here the main task is to update and monitor the parameters that decide wheater track is to be affirmed or deleted. At first the x and P paramters are initialized with resultant x and P obtained from previous EKF function.
-
 
 
 
@@ -64,16 +17,15 @@ Similarly in the measurement update function, functions such as post-fit residua
 
 
 
+![STEP-1](./media/Step_1.png)
 
 
 
 
 Step 2: Track Management
-
 Here the main task is to update and monitor the parameters that decide wheater track is to be affirmed or deleted. At first the x and P paramters are initialized with resultant x and P obtained from previous EKF function.
 
 Initially if the track are unassigned the score for the track is reduced and checked for position uncertainty, if the uncertainity is higher the track is deleted. Later for the assigned track the score is increased and if the score increases above the pre-defined threshold (0.6) the track is set as confirmed.
-
 
 Implement the track management to initialize and delete tracks, set a track state and a track score.
 The visualization shows that a new track is initialized automatically where unassigned measurements occur, the true track is confirmed quickly, and the track is deleted after it has vanished from the visible range. 
