@@ -152,7 +152,7 @@ multi target tracking was the challenging part of this project, the complexity o
 ![Step 4](./media/Step_4.png)
 
 
-
+---
 
  
 ### Do you see any benefits in camera-lidar fusion compared to lidar-only tracking (in theory and in your concrete results)?
